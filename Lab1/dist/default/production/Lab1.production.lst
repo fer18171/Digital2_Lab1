@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Sun Jan 31 15:19:03 2021
+                                                                                               Mon Feb 01 00:24:24 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -12,552 +12,863 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
      6                           	psect	maintext,global,class=CODE,split=1,delta=2
      7                           	psect	text1,local,class=CODE,merge=1,delta=2
      8                           	psect	text2,local,class=CODE,merge=1,delta=2
-     9                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
-    10                           	dabs	1,0x7E,2
-    11  0000                     
-    12                           ; Version 2.20
-    13                           ; Generated 12/02/2020 GMT
-    14                           ; 
-    15                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
-    16                           ; All rights reserved.
-    17                           ; 
-    18                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
-      +                          ip").
+     9                           	psect	text3,local,class=CODE,merge=1,delta=2
+    10                           	psect	text4,local,class=CODE,merge=1,delta=2
+    11                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+    12                           	dabs	1,0x7E,2
+    13  0000                     
+    14                           ; Version 2.20
+    15                           ; Generated 12/02/2020 GMT
+    16                           ; 
+    17                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    18                           ; All rights reserved.
     19                           ; 
-    20                           ; Redistribution and use in source and binary forms, with or without modification, are
-    21                           ; permitted provided that the following conditions are met:
-    22                           ; 
-    23                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+    20                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    21                           ; 
+    22                           ; Redistribution and use in source and binary forms, with or without modification, are
+    23                           ; permitted provided that the following conditions are met:
+    24                           ; 
+    25                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
       +                          t of
-    24                           ;        conditions and the following disclaimer.
-    25                           ; 
-    26                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+    26                           ;        conditions and the following disclaimer.
+    27                           ; 
+    28                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
       +                          list
-    27                           ;        of conditions and the following disclaimer in the documentation and/or other
-    28                           ;        materials provided with the distribution.
-    29                           ; 
-    30                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+    29                           ;        of conditions and the following disclaimer in the documentation and/or other
+    30                           ;        materials provided with the distribution.
+    31                           ; 
+    32                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
       +                          is
-    31                           ;        software without specific prior written permission.
-    32                           ; 
-    33                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
-    34                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+    33                           ;        software without specific prior written permission.
+    34                           ; 
+    35                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    36                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
       +                          OR
-    35                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+    37                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
       +                          T,
-    36                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
-    37                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
-    38                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+    38                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    39                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    40                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
       +                          RICT
-    39                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+    41                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
       +                          SE OF
-    40                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    41                           ; 
-    42                           ; 
-    43                           ; Code-generator required, PIC16F887 Definitions
+    42                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    43                           ; 
     44                           ; 
-    45                           ; SFR Addresses
-    46  0000                     	;# 
-    47  0001                     	;# 
-    48  0002                     	;# 
-    49  0003                     	;# 
-    50  0004                     	;# 
-    51  0005                     	;# 
-    52  0006                     	;# 
-    53  0007                     	;# 
-    54  0008                     	;# 
-    55  0009                     	;# 
-    56  000A                     	;# 
-    57  000B                     	;# 
-    58  000C                     	;# 
-    59  000D                     	;# 
-    60  000E                     	;# 
-    61  000E                     	;# 
-    62  000F                     	;# 
-    63  0010                     	;# 
-    64  0011                     	;# 
-    65  0012                     	;# 
-    66  0013                     	;# 
-    67  0014                     	;# 
-    68  0015                     	;# 
-    69  0015                     	;# 
-    70  0016                     	;# 
-    71  0017                     	;# 
-    72  0018                     	;# 
-    73  0019                     	;# 
-    74  001A                     	;# 
-    75  001B                     	;# 
-    76  001B                     	;# 
-    77  001C                     	;# 
-    78  001D                     	;# 
-    79  001E                     	;# 
-    80  001F                     	;# 
-    81  0081                     	;# 
-    82  0085                     	;# 
-    83  0086                     	;# 
-    84  0087                     	;# 
-    85  0088                     	;# 
-    86  0089                     	;# 
-    87  008C                     	;# 
-    88  008D                     	;# 
-    89  008E                     	;# 
-    90  008F                     	;# 
-    91  0090                     	;# 
-    92  0091                     	;# 
-    93  0092                     	;# 
-    94  0093                     	;# 
-    95  0093                     	;# 
+    45                           ; Code-generator required, PIC16F887 Definitions
+    46                           ; 
+    47                           ; SFR Addresses
+    48  0000                     	;# 
+    49  0001                     	;# 
+    50  0002                     	;# 
+    51  0003                     	;# 
+    52  0004                     	;# 
+    53  0005                     	;# 
+    54  0006                     	;# 
+    55  0007                     	;# 
+    56  0008                     	;# 
+    57  0009                     	;# 
+    58  000A                     	;# 
+    59  000B                     	;# 
+    60  000C                     	;# 
+    61  000D                     	;# 
+    62  000E                     	;# 
+    63  000E                     	;# 
+    64  000F                     	;# 
+    65  0010                     	;# 
+    66  0011                     	;# 
+    67  0012                     	;# 
+    68  0013                     	;# 
+    69  0014                     	;# 
+    70  0015                     	;# 
+    71  0015                     	;# 
+    72  0016                     	;# 
+    73  0017                     	;# 
+    74  0018                     	;# 
+    75  0019                     	;# 
+    76  001A                     	;# 
+    77  001B                     	;# 
+    78  001B                     	;# 
+    79  001C                     	;# 
+    80  001D                     	;# 
+    81  001E                     	;# 
+    82  001F                     	;# 
+    83  0081                     	;# 
+    84  0085                     	;# 
+    85  0086                     	;# 
+    86  0087                     	;# 
+    87  0088                     	;# 
+    88  0089                     	;# 
+    89  008C                     	;# 
+    90  008D                     	;# 
+    91  008E                     	;# 
+    92  008F                     	;# 
+    93  0090                     	;# 
+    94  0091                     	;# 
+    95  0092                     	;# 
     96  0093                     	;# 
-    97  0094                     	;# 
-    98  0095                     	;# 
-    99  0096                     	;# 
-   100  0097                     	;# 
-   101  0098                     	;# 
-   102  0099                     	;# 
-   103  009A                     	;# 
-   104  009B                     	;# 
-   105  009C                     	;# 
-   106  009D                     	;# 
-   107  009E                     	;# 
-   108  009F                     	;# 
-   109  0105                     	;# 
-   110  0107                     	;# 
-   111  0108                     	;# 
-   112  0109                     	;# 
-   113  010C                     	;# 
-   114  010C                     	;# 
-   115  010D                     	;# 
-   116  010E                     	;# 
-   117  010F                     	;# 
-   118  0185                     	;# 
-   119  0187                     	;# 
-   120  0188                     	;# 
-   121  0189                     	;# 
-   122  018C                     	;# 
-   123  018D                     	;# 
-   124  0000                     	;# 
-   125  0001                     	;# 
-   126  0002                     	;# 
-   127  0003                     	;# 
-   128  0004                     	;# 
-   129  0005                     	;# 
-   130  0006                     	;# 
-   131  0007                     	;# 
-   132  0008                     	;# 
-   133  0009                     	;# 
-   134  000A                     	;# 
-   135  000B                     	;# 
-   136  000C                     	;# 
-   137  000D                     	;# 
-   138  000E                     	;# 
-   139  000E                     	;# 
-   140  000F                     	;# 
-   141  0010                     	;# 
-   142  0011                     	;# 
-   143  0012                     	;# 
-   144  0013                     	;# 
-   145  0014                     	;# 
-   146  0015                     	;# 
-   147  0015                     	;# 
-   148  0016                     	;# 
-   149  0017                     	;# 
-   150  0018                     	;# 
-   151  0019                     	;# 
-   152  001A                     	;# 
-   153  001B                     	;# 
-   154  001B                     	;# 
-   155  001C                     	;# 
-   156  001D                     	;# 
-   157  001E                     	;# 
-   158  001F                     	;# 
-   159  0081                     	;# 
-   160  0085                     	;# 
-   161  0086                     	;# 
-   162  0087                     	;# 
-   163  0088                     	;# 
-   164  0089                     	;# 
-   165  008C                     	;# 
-   166  008D                     	;# 
-   167  008E                     	;# 
-   168  008F                     	;# 
-   169  0090                     	;# 
-   170  0091                     	;# 
-   171  0092                     	;# 
-   172  0093                     	;# 
-   173  0093                     	;# 
+    97  0093                     	;# 
+    98  0093                     	;# 
+    99  0094                     	;# 
+   100  0095                     	;# 
+   101  0096                     	;# 
+   102  0097                     	;# 
+   103  0098                     	;# 
+   104  0099                     	;# 
+   105  009A                     	;# 
+   106  009B                     	;# 
+   107  009C                     	;# 
+   108  009D                     	;# 
+   109  009E                     	;# 
+   110  009F                     	;# 
+   111  0105                     	;# 
+   112  0107                     	;# 
+   113  0108                     	;# 
+   114  0109                     	;# 
+   115  010C                     	;# 
+   116  010C                     	;# 
+   117  010D                     	;# 
+   118  010E                     	;# 
+   119  010F                     	;# 
+   120  0185                     	;# 
+   121  0187                     	;# 
+   122  0188                     	;# 
+   123  0189                     	;# 
+   124  018C                     	;# 
+   125  018D                     	;# 
+   126  0000                     	;# 
+   127  0001                     	;# 
+   128  0002                     	;# 
+   129  0003                     	;# 
+   130  0004                     	;# 
+   131  0005                     	;# 
+   132  0006                     	;# 
+   133  0007                     	;# 
+   134  0008                     	;# 
+   135  0009                     	;# 
+   136  000A                     	;# 
+   137  000B                     	;# 
+   138  000C                     	;# 
+   139  000D                     	;# 
+   140  000E                     	;# 
+   141  000E                     	;# 
+   142  000F                     	;# 
+   143  0010                     	;# 
+   144  0011                     	;# 
+   145  0012                     	;# 
+   146  0013                     	;# 
+   147  0014                     	;# 
+   148  0015                     	;# 
+   149  0015                     	;# 
+   150  0016                     	;# 
+   151  0017                     	;# 
+   152  0018                     	;# 
+   153  0019                     	;# 
+   154  001A                     	;# 
+   155  001B                     	;# 
+   156  001B                     	;# 
+   157  001C                     	;# 
+   158  001D                     	;# 
+   159  001E                     	;# 
+   160  001F                     	;# 
+   161  0081                     	;# 
+   162  0085                     	;# 
+   163  0086                     	;# 
+   164  0087                     	;# 
+   165  0088                     	;# 
+   166  0089                     	;# 
+   167  008C                     	;# 
+   168  008D                     	;# 
+   169  008E                     	;# 
+   170  008F                     	;# 
+   171  0090                     	;# 
+   172  0091                     	;# 
+   173  0092                     	;# 
    174  0093                     	;# 
-   175  0094                     	;# 
-   176  0095                     	;# 
-   177  0096                     	;# 
-   178  0097                     	;# 
-   179  0098                     	;# 
-   180  0099                     	;# 
-   181  009A                     	;# 
-   182  009B                     	;# 
-   183  009C                     	;# 
-   184  009D                     	;# 
-   185  009E                     	;# 
-   186  009F                     	;# 
-   187  0105                     	;# 
-   188  0107                     	;# 
-   189  0108                     	;# 
-   190  0109                     	;# 
-   191  010C                     	;# 
-   192  010C                     	;# 
-   193  010D                     	;# 
-   194  010E                     	;# 
-   195  010F                     	;# 
-   196  0185                     	;# 
-   197  0187                     	;# 
-   198  0188                     	;# 
-   199  0189                     	;# 
-   200  018C                     	;# 
-   201  018D                     	;# 
-   202  0007                     _PORTC	set	7
-   203  0008                     _PORTD	set	8
-   204  0005                     _PORTAbits	set	5
-   205  0085                     _TRISAbits	set	133
-   206  0087                     _TRISC	set	135
-   207  0088                     _TRISD	set	136
-   208  0189                     _ANSELH	set	393
-   209  0188                     _ANSEL	set	392
-   210                           
-   211                           	psect	cinit
-   212  07FC                     start_initialization:	
-   213                           ; #config settings
+   175  0093                     	;# 
+   176  0093                     	;# 
+   177  0094                     	;# 
+   178  0095                     	;# 
+   179  0096                     	;# 
+   180  0097                     	;# 
+   181  0098                     	;# 
+   182  0099                     	;# 
+   183  009A                     	;# 
+   184  009B                     	;# 
+   185  009C                     	;# 
+   186  009D                     	;# 
+   187  009E                     	;# 
+   188  009F                     	;# 
+   189  0105                     	;# 
+   190  0107                     	;# 
+   191  0108                     	;# 
+   192  0109                     	;# 
+   193  010C                     	;# 
+   194  010C                     	;# 
+   195  010D                     	;# 
+   196  010E                     	;# 
+   197  010F                     	;# 
+   198  0185                     	;# 
+   199  0187                     	;# 
+   200  0188                     	;# 
+   201  0189                     	;# 
+   202  018C                     	;# 
+   203  018D                     	;# 
+   204  0008                     _PORTDbits	set	8
+   205  0007                     _PORTCbits	set	7
+   206  0007                     _PORTC	set	7
+   207  0008                     _PORTD	set	8
+   208  0005                     _PORTAbits	set	5
+   209  0085                     _TRISAbits	set	133
+   210  0087                     _TRISC	set	135
+   211  0088                     _TRISD	set	136
+   212  0189                     _ANSELH	set	393
+   213  0188                     _ANSEL	set	392
    214                           
-   215  07FC                     __initialization:
-   216  07FC                     end_of_initialization:	
-   217                           ;End of C runtime variable initialization code
+   215                           	psect	cinit
+   216  07FC                     start_initialization:	
+   217                           ; #config settings
    218                           
-   219  07FC                     __end_of__initialization:
-   220  07FC  0183               	clrf	3
-   221  07FD  120A  118A  2FAC   	ljmp	_main	;jump to C main() function
+   219  07FC                     __initialization:
+   220  07FC                     end_of_initialization:	
+   221                           ;End of C runtime variable initialization code
    222                           
-   223                           	psect	cstackCOMMON
-   224  0070                     __pcstackCOMMON:
-   225  0070                     ?_setup:
-   226  0070                     ??_setup:	
-   227                           ; 1 bytes @ 0x0
-   228                           
-   229  0070                     ?_StartSecuence:	
-   230                           ; 1 bytes @ 0x0
-   231                           
-   232  0070                     ??_StartSecuence:	
-   233                           ; 1 bytes @ 0x0
-   234                           
-   235  0070                     ?_main:	
-   236                           ; 1 bytes @ 0x0
-   237                           
+   223  07FC                     __end_of__initialization:
+   224  07FC  0183               	clrf	3
+   225  07FD  120A  118A  2FAC   	ljmp	_main	;jump to C main() function
+   226                           
+   227                           	psect	cstackCOMMON
+   228  0070                     __pcstackCOMMON:
+   229  0070                     ?_setup:
+   230  0070                     ??_setup:	
+   231                           ; 1 bytes @ 0x0
+   232                           
+   233  0070                     ?_StartSecuence:	
+   234                           ; 1 bytes @ 0x0
+   235                           
+   236  0070                     ??_StartSecuence:	
+   237                           ; 1 bytes @ 0x0
    238                           
-   239                           ; 1 bytes @ 0x0
-   240  0070                     	ds	3
-   241  0073                     ??_main:
-   242                           
-   243                           	psect	maintext
-   244  07AC                     __pmaintext:	
-   245                           ; 1 bytes @ 0x3
-   246 ;;
-   247 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
-   248 ;;
-   249 ;; *************** function _main *****************
-   250 ;; Defined at:
-   251 ;;		line 59 in file "JuegoDeCarreras.c"
-   252 ;; Parameters:    Size  Location     Type
-   253 ;;		None
-   254 ;; Auto vars:     Size  Location     Type
-   255 ;;		None
-   256 ;; Return value:  Size  Location     Type
-   257 ;;                  1    wreg      void 
-   258 ;; Registers used:
-   259 ;;		wreg, status,2, status,0, pclath, cstack
-   260 ;; Tracked objects:
-   261 ;;		On entry : B00/0
-   262 ;;		On exit  : 0/0
-   263 ;;		Unchanged: 0/0
-   264 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   265 ;;      Params:         0       0       0       0       0
-   266 ;;      Locals:         0       0       0       0       0
-   267 ;;      Temps:          0       0       0       0       0
-   268 ;;      Totals:         0       0       0       0       0
-   269 ;;Total ram usage:        0 bytes
-   270 ;; Hardware stack levels required when called:    1
-   271 ;; This function calls:
-   272 ;;		_StartSecuence
-   273 ;;		_setup
-   274 ;; This function is called by:
-   275 ;;		Startup code after reset
-   276 ;; This function uses a non-reentrant model
-   277 ;;
-   278                           
-   279                           
-   280                           ;psect for function _main
-   281  07AC                     _main:
-   282  07AC                     l661:	
-   283                           ;incstack = 0
-   284                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
-   285                           
-   286                           
-   287                           ;JuegoDeCarreras.c: 60:     setup();
-   288  07AC  120A  118A  27C0  120A  118A  	fcall	_setup
-   289  07B1                     l663:
-   290                           
-   291                           ;JuegoDeCarreras.c: 63:         if (PORTAbits.RA3==1){
-   292  07B1  1283               	bcf	3,5	;RP0=0, select bank0
-   293  07B2  1303               	bcf	3,6	;RP1=0, select bank0
-   294  07B3  1D85               	btfss	5,3	;volatile
-   295  07B4  2FB6               	goto	u11
-   296  07B5  2FB7               	goto	u10
-   297  07B6                     u11:
-   298  07B6  2FB1               	goto	l663
-   299  07B7                     u10:
-   300  07B7                     l665:
-   301                           
-   302                           ;JuegoDeCarreras.c: 64:             StartSecuence();
-   303  07B7  120A  118A  27D6  120A  118A  	fcall	_StartSecuence
-   304  07BC  2FB1               	goto	l663
-   305  07BD  120A  118A  2800   	ljmp	start
-   306  07C0                     __end_of_main:
-   307                           
-   308                           	psect	text1
-   309  07C0                     __ptext1:	
-   310 ;; *************** function _setup *****************
-   311 ;; Defined at:
-   312 ;;		line 74 in file "JuegoDeCarreras.c"
-   313 ;; Parameters:    Size  Location     Type
-   314 ;;		None
-   315 ;; Auto vars:     Size  Location     Type
-   316 ;;		None
-   317 ;; Return value:  Size  Location     Type
-   318 ;;                  1    wreg      void 
-   319 ;; Registers used:
-   320 ;;		status,2
-   321 ;; Tracked objects:
-   322 ;;		On entry : 0/0
-   323 ;;		On exit  : 0/0
-   324 ;;		Unchanged: 0/0
-   325 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   326 ;;      Params:         0       0       0       0       0
-   327 ;;      Locals:         0       0       0       0       0
-   328 ;;      Temps:          0       0       0       0       0
-   329 ;;      Totals:         0       0       0       0       0
-   330 ;;Total ram usage:        0 bytes
-   331 ;; Hardware stack levels used:    1
-   332 ;; This function calls:
-   333 ;;		Nothing
-   334 ;; This function is called by:
-   335 ;;		_main
-   336 ;; This function uses a non-reentrant model
-   337 ;;
-   338                           
-   339                           
-   340                           ;psect for function _setup
-   341  07C0                     _setup:
-   342  07C0                     l629:	
-   343                           ;incstack = 0
-   344                           ; Regs used in _setup: [status,2]
-   345                           
+   239  0070                     ?_avanceJ1:	
+   240                           ; 1 bytes @ 0x0
+   241                           
+   242  0070                     ??_avanceJ1:	
+   243                           ; 1 bytes @ 0x0
+   244                           
+   245  0070                     ?_avanceJ2:	
+   246                           ; 1 bytes @ 0x0
+   247                           
+   248  0070                     ??_avanceJ2:	
+   249                           ; 1 bytes @ 0x0
+   250                           
+   251  0070                     ?_main:	
+   252                           ; 1 bytes @ 0x0
+   253                           
+   254                           
+   255                           ; 1 bytes @ 0x0
+   256  0070                     	ds	11
+   257  007B                     ??_main:
+   258                           
+   259                           ; 1 bytes @ 0xB
+   260  007B                     	ds	3
+   261                           
+   262                           	psect	maintext
+   263  07AC                     __pmaintext:	
+   264 ;;
+   265 ;;Main: autosize = 0, tempsize = 3, incstack = 0, save=0
+   266 ;;
+   267 ;; *************** function _main *****************
+   268 ;; Defined at:
+   269 ;;		line 65 in file "JuegoDeCarreras.c"
+   270 ;; Parameters:    Size  Location     Type
+   271 ;;		None
+   272 ;; Auto vars:     Size  Location     Type
+   273 ;;		None
+   274 ;; Return value:  Size  Location     Type
+   275 ;;                  1    wreg      void 
+   276 ;; Registers used:
+   277 ;;		wreg, status,2, status,0, pclath, cstack
+   278 ;; Tracked objects:
+   279 ;;		On entry : B00/0
+   280 ;;		On exit  : 0/0
+   281 ;;		Unchanged: 0/0
+   282 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   283 ;;      Params:         0       0       0       0       0
+   284 ;;      Locals:         0       0       0       0       0
+   285 ;;      Temps:          3       0       0       0       0
+   286 ;;      Totals:         3       0       0       0       0
+   287 ;;Total ram usage:        3 bytes
+   288 ;; Hardware stack levels required when called:    1
+   289 ;; This function calls:
+   290 ;;		_StartSecuence
+   291 ;;		_avanceJ1
+   292 ;;		_avanceJ2
+   293 ;;		_setup
+   294 ;; This function is called by:
+   295 ;;		Startup code after reset
+   296 ;; This function uses a non-reentrant model
+   297 ;;
+   298                           
+   299                           
+   300                           ;psect for function _main
+   301  07AC                     _main:
+   302  07AC                     l693:	
+   303                           ;incstack = 0
+   304                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   305                           
+   306                           
+   307                           ;JuegoDeCarreras.c: 66:     setup();
+   308  07AC  120A  118A  2703  120A  118A  	fcall	_setup
+   309  07B1                     l695:
+   310                           
+   311                           ;JuegoDeCarreras.c: 68:         if (PORTAbits.RA3 == 1) {
+   312  07B1  1283               	bcf	3,5	;RP0=0, select bank0
+   313  07B2  1303               	bcf	3,6	;RP1=0, select bank0
+   314  07B3  1D85               	btfss	5,3	;volatile
+   315  07B4  2FB6               	goto	u31
+   316  07B5  2FB7               	goto	u30
+   317  07B6                     u31:
+   318  07B6  2FBC               	goto	l699
+   319  07B7                     u30:
+   320  07B7                     l697:
+   321                           
+   322                           ;JuegoDeCarreras.c: 69:             StartSecuence();
+   323  07B7  120A  118A  2719  120A  118A  	fcall	_StartSecuence
+   324  07BC                     l699:
+   325                           
+   326                           ;JuegoDeCarreras.c: 71:         if (PORTAbits.RA0 == 1 & PORTAbits.RA4 == 1) {
+   327  07BC  3001               	movlw	1
+   328  07BD  1283               	bcf	3,5	;RP0=0, select bank0
+   329  07BE  1303               	bcf	3,6	;RP1=0, select bank0
+   330  07BF  1C05               	btfss	5,0	;volatile
+   331  07C0  3900               	andlw	0
+   332  07C1  1E05               	btfss	5,4	;volatile
+   333  07C2  3900               	andlw	0
+   334  07C3  3800               	iorlw	0
+   335  07C4  1903               	skipnz
+   336  07C5  2FC7               	goto	u41
+   337  07C6  2FC8               	goto	u40
+   338  07C7                     u41:
+   339  07C7  2FDA               	goto	l705
+   340  07C8                     u40:
+   341  07C8                     l701:
+   342                           
+   343                           ;JuegoDeCarreras.c: 72:             avanceJ1();
+   344  07C8  120A  118A  2740  120A  118A  	fcall	_avanceJ1
+   345  07CD                     l703:
    346                           
-   347                           ;JuegoDeCarreras.c: 75:     ANSEL = 0;
-   348  07C0  1683               	bsf	3,5	;RP0=1, select bank3
-   349  07C1  1703               	bsf	3,6	;RP1=1, select bank3
-   350  07C2  0188               	clrf	8	;volatile
-   351                           
-   352                           ;JuegoDeCarreras.c: 76:     ANSELH = 0;
-   353  07C3  0189               	clrf	9	;volatile
-   354                           
-   355                           ;JuegoDeCarreras.c: 77:     TRISD = 0;
-   356  07C4  1683               	bsf	3,5	;RP0=1, select bank1
-   357  07C5  1303               	bcf	3,6	;RP1=0, select bank1
-   358  07C6  0188               	clrf	8	;volatile
-   359                           
-   360                           ;JuegoDeCarreras.c: 78:     TRISC = 0;
-   361  07C7  0187               	clrf	7	;volatile
-   362  07C8                     l631:
+   347                           ;JuegoDeCarreras.c: 73:             _delay((unsigned long)((500)*(8000000/4000.0)));
+   348  07CD  3006               	movlw	6
+   349  07CE  00FD               	movwf	??_main+2
+   350  07CF  3013               	movlw	19
+   351  07D0  00FC               	movwf	??_main+1
+   352  07D1  30AD               	movlw	173
+   353  07D2  00FB               	movwf	??_main
+   354  07D3                     u67:
+   355  07D3  0BFB               	decfsz	??_main,f
+   356  07D4  2FD3               	goto	u67
+   357  07D5  0BFC               	decfsz	??_main+1,f
+   358  07D6  2FD3               	goto	u67
+   359  07D7  0BFD               	decfsz	??_main+2,f
+   360  07D8  2FD3               	goto	u67
+   361  07D9  2FDA               	nop2
+   362  07DA                     l705:
    363                           
-   364                           ;JuegoDeCarreras.c: 79:     TRISAbits.TRISA0 = 0;
-   365  07C8  1005               	bcf	5,0	;volatile
-   366  07C9                     l633:
-   367                           
-   368                           ;JuegoDeCarreras.c: 80:     TRISAbits.TRISA1 = 0;
-   369  07C9  1085               	bcf	5,1	;volatile
-   370  07CA                     l635:
-   371                           
-   372                           ;JuegoDeCarreras.c: 81:     TRISAbits.TRISA2 = 0;
-   373  07CA  1105               	bcf	5,2	;volatile
-   374  07CB                     l637:
-   375                           
-   376                           ;JuegoDeCarreras.c: 82:     TRISAbits.TRISA3 = 1;
-   377  07CB  1585               	bsf	5,3	;volatile
-   378  07CC                     l639:
-   379                           
-   380                           ;JuegoDeCarreras.c: 83:     TRISAbits.TRISA4 = 1;
-   381  07CC  1605               	bsf	5,4	;volatile
-   382  07CD                     l641:
-   383                           
-   384                           ;JuegoDeCarreras.c: 84:     TRISAbits.TRISA5 = 1;
-   385  07CD  1685               	bsf	5,5	;volatile
-   386                           
-   387                           ;JuegoDeCarreras.c: 85:     PORTD = 0;
-   388  07CE  1283               	bcf	3,5	;RP0=0, select bank0
-   389  07CF  1303               	bcf	3,6	;RP1=0, select bank0
-   390  07D0  0188               	clrf	8	;volatile
-   391                           
-   392                           ;JuegoDeCarreras.c: 86:     PORTC = 0;
-   393  07D1  0187               	clrf	7	;volatile
-   394  07D2                     l643:
-   395                           
-   396                           ;JuegoDeCarreras.c: 87:     PORTAbits.RA2 = 0;
-   397  07D2  1105               	bcf	5,2	;volatile
-   398  07D3                     l645:
-   399                           
-   400                           ;JuegoDeCarreras.c: 88:     PORTAbits.RA0 = 0;
-   401  07D3  1005               	bcf	5,0	;volatile
-   402  07D4                     l647:
+   364                           ;JuegoDeCarreras.c: 76:         if (PORTAbits.RA0 == 1 & PORTAbits.RA5 == 1) {
+   365  07DA  3001               	movlw	1
+   366  07DB  1283               	bcf	3,5	;RP0=0, select bank0
+   367  07DC  1303               	bcf	3,6	;RP1=0, select bank0
+   368  07DD  1C05               	btfss	5,0	;volatile
+   369  07DE  3900               	andlw	0
+   370  07DF  1E85               	btfss	5,5	;volatile
+   371  07E0  3900               	andlw	0
+   372  07E1  3800               	iorlw	0
+   373  07E2  1903               	skipnz
+   374  07E3  2FE5               	goto	u51
+   375  07E4  2FE6               	goto	u50
+   376  07E5                     u51:
+   377  07E5  2FB1               	goto	l695
+   378  07E6                     u50:
+   379  07E6                     l707:
+   380                           
+   381                           ;JuegoDeCarreras.c: 77:             avanceJ2();
+   382  07E6  120A  118A  2776  120A  118A  	fcall	_avanceJ2
+   383  07EB                     l709:
+   384                           
+   385                           ;JuegoDeCarreras.c: 78:             _delay((unsigned long)((500)*(8000000/4000.0)));
+   386  07EB  3006               	movlw	6
+   387  07EC  00FD               	movwf	??_main+2
+   388  07ED  3013               	movlw	19
+   389  07EE  00FC               	movwf	??_main+1
+   390  07EF  30AD               	movlw	173
+   391  07F0  00FB               	movwf	??_main
+   392  07F1                     u77:
+   393  07F1  0BFB               	decfsz	??_main,f
+   394  07F2  2FF1               	goto	u77
+   395  07F3  0BFC               	decfsz	??_main+1,f
+   396  07F4  2FF1               	goto	u77
+   397  07F5  0BFD               	decfsz	??_main+2,f
+   398  07F6  2FF1               	goto	u77
+   399  07F7  2FF8               	nop2
+   400  07F8  2FB1               	goto	l695
+   401  07F9  120A  118A  2800   	ljmp	start
+   402  07FC                     __end_of_main:
    403                           
-   404                           ;JuegoDeCarreras.c: 89:     PORTAbits.RA1 = 0;
-   405  07D4  1085               	bcf	5,1	;volatile
-   406  07D5                     l34:
-   407  07D5  0008               	return
-   408  07D6                     __end_of_setup:
-   409                           
-   410                           	psect	text2
-   411  07D6                     __ptext2:	
-   412 ;; *************** function _StartSecuence *****************
-   413 ;; Defined at:
-   414 ;;		line 94 in file "JuegoDeCarreras.c"
-   415 ;; Parameters:    Size  Location     Type
-   416 ;;		None
-   417 ;; Auto vars:     Size  Location     Type
-   418 ;;		None
-   419 ;; Return value:  Size  Location     Type
-   420 ;;                  1    wreg      void 
-   421 ;; Registers used:
-   422 ;;		wreg
-   423 ;; Tracked objects:
-   424 ;;		On entry : 0/0
-   425 ;;		On exit  : 0/0
-   426 ;;		Unchanged: 0/0
-   427 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   428 ;;      Params:         0       0       0       0       0
-   429 ;;      Locals:         0       0       0       0       0
-   430 ;;      Temps:          3       0       0       0       0
-   431 ;;      Totals:         3       0       0       0       0
-   432 ;;Total ram usage:        3 bytes
-   433 ;; Hardware stack levels used:    1
-   434 ;; This function calls:
-   435 ;;		Nothing
-   436 ;; This function is called by:
-   437 ;;		_main
-   438 ;; This function uses a non-reentrant model
-   439 ;;
-   440                           
+   404                           	psect	text1
+   405  0703                     __ptext1:	
+   406 ;; *************** function _setup *****************
+   407 ;; Defined at:
+   408 ;;		line 89 in file "JuegoDeCarreras.c"
+   409 ;; Parameters:    Size  Location     Type
+   410 ;;		None
+   411 ;; Auto vars:     Size  Location     Type
+   412 ;;		None
+   413 ;; Return value:  Size  Location     Type
+   414 ;;                  1    wreg      void 
+   415 ;; Registers used:
+   416 ;;		status,2
+   417 ;; Tracked objects:
+   418 ;;		On entry : 0/0
+   419 ;;		On exit  : 0/0
+   420 ;;		Unchanged: 0/0
+   421 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   422 ;;      Params:         0       0       0       0       0
+   423 ;;      Locals:         0       0       0       0       0
+   424 ;;      Temps:          0       0       0       0       0
+   425 ;;      Totals:         0       0       0       0       0
+   426 ;;Total ram usage:        0 bytes
+   427 ;; Hardware stack levels used:    1
+   428 ;; This function calls:
+   429 ;;		Nothing
+   430 ;; This function is called by:
+   431 ;;		_main
+   432 ;; This function uses a non-reentrant model
+   433 ;;
+   434                           
+   435                           
+   436                           ;psect for function _setup
+   437  0703                     _setup:
+   438  0703                     l649:	
+   439                           ;incstack = 0
+   440                           ; Regs used in _setup: [status,2]
    441                           
-   442                           ;psect for function _StartSecuence
-   443  07D6                     _StartSecuence:
-   444  07D6                     l649:	
-   445                           ;incstack = 0
-   446                           ; Regs used in _StartSecuence: [wreg]
+   442                           
+   443                           ;JuegoDeCarreras.c: 90:     ANSEL = 0;
+   444  0703  1683               	bsf	3,5	;RP0=1, select bank3
+   445  0704  1703               	bsf	3,6	;RP1=1, select bank3
+   446  0705  0188               	clrf	8	;volatile
    447                           
-   448                           
-   449                           ;JuegoDeCarreras.c: 95:     PORTAbits.RA2 = 1;
-   450  07D6  1283               	bcf	3,5	;RP0=0, select bank0
-   451  07D7  1303               	bcf	3,6	;RP1=0, select bank0
-   452  07D8  1505               	bsf	5,2	;volatile
-   453  07D9                     l651:
-   454                           
-   455                           ;JuegoDeCarreras.c: 96:     _delay((unsigned long)((600)*(8000000/4000.0)));
-   456  07D9  3007               	movlw	7
-   457  07DA  00F2               	movwf	??_StartSecuence+2
-   458  07DB  3017               	movlw	23
-   459  07DC  00F1               	movwf	??_StartSecuence+1
-   460  07DD  306A               	movlw	106
-   461  07DE  00F0               	movwf	??_StartSecuence
-   462  07DF                     u27:
-   463  07DF  0BF0               	decfsz	??_StartSecuence,f
-   464  07E0  2FDF               	goto	u27
-   465  07E1  0BF1               	decfsz	??_StartSecuence+1,f
-   466  07E2  2FDF               	goto	u27
-   467  07E3  0BF2               	decfsz	??_StartSecuence+2,f
-   468  07E4  2FDF               	goto	u27
-   469  07E5  0000               	nop
-   470  07E6                     l653:
+   448                           ;JuegoDeCarreras.c: 91:     ANSELH = 0;
+   449  0706  0189               	clrf	9	;volatile
+   450                           
+   451                           ;JuegoDeCarreras.c: 92:     TRISD = 0;
+   452  0707  1683               	bsf	3,5	;RP0=1, select bank1
+   453  0708  1303               	bcf	3,6	;RP1=0, select bank1
+   454  0709  0188               	clrf	8	;volatile
+   455                           
+   456                           ;JuegoDeCarreras.c: 93:     TRISC = 0;
+   457  070A  0187               	clrf	7	;volatile
+   458  070B                     l651:
+   459                           
+   460                           ;JuegoDeCarreras.c: 94:     TRISAbits.TRISA0 = 0;
+   461  070B  1005               	bcf	5,0	;volatile
+   462  070C                     l653:
+   463                           
+   464                           ;JuegoDeCarreras.c: 95:     TRISAbits.TRISA1 = 0;
+   465  070C  1085               	bcf	5,1	;volatile
+   466  070D                     l655:
+   467                           
+   468                           ;JuegoDeCarreras.c: 96:     TRISAbits.TRISA2 = 0;
+   469  070D  1105               	bcf	5,2	;volatile
+   470  070E                     l657:
    471                           
-   472                           ;JuegoDeCarreras.c: 97:     PORTAbits.RA2 = 0;
-   473  07E6  1283               	bcf	3,5	;RP0=0, select bank0
-   474  07E7  1303               	bcf	3,6	;RP1=0, select bank0
-   475  07E8  1105               	bcf	5,2	;volatile
-   476  07E9                     l655:
-   477                           
-   478                           ;JuegoDeCarreras.c: 98:     PORTAbits.RA1 = 1;
-   479  07E9  1485               	bsf	5,1	;volatile
-   480                           
-   481                           ;JuegoDeCarreras.c: 99:     _delay((unsigned long)((600)*(8000000/4000.0)));
-   482  07EA  3007               	movlw	7
-   483  07EB  00F2               	movwf	??_StartSecuence+2
-   484  07EC  3017               	movlw	23
-   485  07ED  00F1               	movwf	??_StartSecuence+1
-   486  07EE  306A               	movlw	106
-   487  07EF  00F0               	movwf	??_StartSecuence
-   488  07F0                     u37:
-   489  07F0  0BF0               	decfsz	??_StartSecuence,f
-   490  07F1  2FF0               	goto	u37
-   491  07F2  0BF1               	decfsz	??_StartSecuence+1,f
-   492  07F3  2FF0               	goto	u37
-   493  07F4  0BF2               	decfsz	??_StartSecuence+2,f
-   494  07F5  2FF0               	goto	u37
-   495  07F6  0000               	nop
-   496  07F7                     l657:
-   497                           
-   498                           ;JuegoDeCarreras.c: 100:     PORTAbits.RA1 = 0;
-   499  07F7  1283               	bcf	3,5	;RP0=0, select bank0
-   500  07F8  1303               	bcf	3,6	;RP1=0, select bank0
-   501  07F9  1085               	bcf	5,1	;volatile
-   502  07FA                     l659:
-   503                           
-   504                           ;JuegoDeCarreras.c: 101:     PORTAbits.RA0 = 1;
-   505  07FA  1405               	bsf	5,0	;volatile
-   506  07FB                     l37:
-   507  07FB  0008               	return
-   508  07FC                     __end_of_StartSecuence:
-   509  007E                     btemp	set	126	;btemp
-   510  007E                     wtemp0	set	126
-   511                           
-   512                           	psect	config
-   513                           
-   514                           ;Config register CONFIG1 @ 0x2007
-   515                           ;	Oscillator Selection bits
-   516                           ;	FOSC = XT, XT oscillator: Crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN
-   517                           ;	Watchdog Timer Enable bit
-   518                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
-   519                           ;	Power-up Timer Enable bit
-   520                           ;	PWRTE = OFF, PWRT disabled
-   521                           ;	RE3/MCLR pin function select bit
-   522                           ;	MCLRE = ON, RE3/MCLR pin function is MCLR
-   523                           ;	Code Protection bit
-   524                           ;	CP = OFF, Program memory code protection is disabled
-   525                           ;	Data Code Protection bit
-   526                           ;	CPD = OFF, Data memory code protection is disabled
-   527                           ;	Brown Out Reset Selection bits
-   528                           ;	BOREN = OFF, BOR disabled
-   529                           ;	Internal External Switchover bit
-   530                           ;	IESO = OFF, Internal/External Switchover mode is disabled
-   531                           ;	Fail-Safe Clock Monitor Enabled bit
-   532                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
-   533                           ;	Low Voltage Programming Enable bit
-   534                           ;	LVP = OFF, RB3 pin has digital I/O, HV on MCLR must be used for programming
-   535                           ;	In-Circuit Debugger Mode bit
-   536                           ;	DEBUG = 0x1, unprogrammed default
-   537  2007                     	org	8199
-   538  2007  20F1               	dw	8433
-   539                           
-   540                           ;Config register CONFIG2 @ 0x2008
-   541                           ;	Brown-out Reset Selection bit
-   542                           ;	BOR4V = BOR40V, Brown-out Reset set to 4.0V
-   543                           ;	Flash Program Memory Self Write Enable bits
-   544                           ;	WRT = OFF, Write protection off
-   545  2008                     	org	8200
-   546  2008  3FFF               	dw	16383
+   472                           ;JuegoDeCarreras.c: 97:     TRISAbits.TRISA3 = 1;
+   473  070E  1585               	bsf	5,3	;volatile
+   474  070F                     l659:
+   475                           
+   476                           ;JuegoDeCarreras.c: 98:     TRISAbits.TRISA4 = 1;
+   477  070F  1605               	bsf	5,4	;volatile
+   478  0710                     l661:
+   479                           
+   480                           ;JuegoDeCarreras.c: 99:     TRISAbits.TRISA5 = 1;
+   481  0710  1685               	bsf	5,5	;volatile
+   482                           
+   483                           ;JuegoDeCarreras.c: 100:     PORTD = 0;
+   484  0711  1283               	bcf	3,5	;RP0=0, select bank0
+   485  0712  1303               	bcf	3,6	;RP1=0, select bank0
+   486  0713  0188               	clrf	8	;volatile
+   487                           
+   488                           ;JuegoDeCarreras.c: 101:     PORTC = 0;
+   489  0714  0187               	clrf	7	;volatile
+   490  0715                     l663:
+   491                           
+   492                           ;JuegoDeCarreras.c: 102:     PORTAbits.RA2 = 0;
+   493  0715  1105               	bcf	5,2	;volatile
+   494  0716                     l665:
+   495                           
+   496                           ;JuegoDeCarreras.c: 103:     PORTAbits.RA0 = 0;
+   497  0716  1005               	bcf	5,0	;volatile
+   498  0717                     l667:
+   499                           
+   500                           ;JuegoDeCarreras.c: 104:     PORTAbits.RA1 = 0;
+   501  0717  1085               	bcf	5,1	;volatile
+   502  0718                     l44:
+   503  0718  0008               	return
+   504  0719                     __end_of_setup:
+   505                           
+   506                           	psect	text2
+   507  0776                     __ptext2:	
+   508 ;; *************** function _avanceJ2 *****************
+   509 ;; Defined at:
+   510 ;;		line 127 in file "JuegoDeCarreras.c"
+   511 ;; Parameters:    Size  Location     Type
+   512 ;;		None
+   513 ;; Auto vars:     Size  Location     Type
+   514 ;;		None
+   515 ;; Return value:  Size  Location     Type
+   516 ;;                  1    wreg      void 
+   517 ;; Registers used:
+   518 ;;		wreg, status,2, status,0
+   519 ;; Tracked objects:
+   520 ;;		On entry : 0/0
+   521 ;;		On exit  : 0/0
+   522 ;;		Unchanged: 0/0
+   523 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   524 ;;      Params:         0       0       0       0       0
+   525 ;;      Locals:         0       0       0       0       0
+   526 ;;      Temps:         11       0       0       0       0
+   527 ;;      Totals:        11       0       0       0       0
+   528 ;;Total ram usage:       11 bytes
+   529 ;; Hardware stack levels used:    1
+   530 ;; This function calls:
+   531 ;;		Nothing
+   532 ;; This function is called by:
+   533 ;;		_main
+   534 ;; This function uses a non-reentrant model
+   535 ;;
+   536                           
+   537                           
+   538                           ;psect for function _avanceJ2
+   539  0776                     _avanceJ2:
+   540  0776                     l687:	
+   541                           ;incstack = 0
+   542                           ; Regs used in _avanceJ2: [wreg+status,2+status,0]
+   543                           
+   544                           
+   545                           ;JuegoDeCarreras.c: 128:     if ((PORTDbits.RD0 | PORTDbits.RD1 | PORTDbits.RD2 | PORTDb
+      +                          its.RD3 | PORTDbits.RD4 | PORTDbits.RD5 | PORTDbits.RD6 | PORTDbits.RD7) == 0)
+   546  0776  1283               	bcf	3,5	;RP0=0, select bank0
+   547  0777  1303               	bcf	3,6	;RP1=0, select bank0
+   548  0778  0D08               	rlf	8,w	;volatile
+   549  0779  0D08               	rlf	8,w	;volatile
+   550  077A  3901               	andlw	1
+   551  077B  00F0               	movwf	??_avanceJ2
+   552  077C  0E08               	swapf	8,w	;volatile
+   553  077D  00F1               	movwf	??_avanceJ2+1
+   554  077E  0CF1               	rrf	??_avanceJ2+1,f
+   555  077F  0C71               	rrf	??_avanceJ2+1,w
+   556  0780  3901               	andlw	1
+   557  0781  00F2               	movwf	??_avanceJ2+2
+   558  0782  0E08               	swapf	8,w	;volatile
+   559  0783  00F3               	movwf	??_avanceJ2+3
+   560  0784  0C73               	rrf	??_avanceJ2+3,w
+   561  0785  3901               	andlw	1
+   562  0786  00F4               	movwf	??_avanceJ2+4
+   563  0787  0E08               	swapf	8,w	;volatile
+   564  0788  3901               	andlw	1
+   565  0789  00F5               	movwf	??_avanceJ2+5
+   566  078A  0C08               	rrf	8,w	;volatile
+   567  078B  00F6               	movwf	??_avanceJ2+6
+   568  078C  0CF6               	rrf	??_avanceJ2+6,f
+   569  078D  0C76               	rrf	??_avanceJ2+6,w
+   570  078E  3901               	andlw	1
+   571  078F  00F7               	movwf	??_avanceJ2+7
+   572  0790  0C08               	rrf	8,w	;volatile
+   573  0791  00F8               	movwf	??_avanceJ2+8
+   574  0792  0C78               	rrf	??_avanceJ2+8,w
+   575  0793  3901               	andlw	1
+   576  0794  00F9               	movwf	??_avanceJ2+9
+   577  0795  0C08               	rrf	8,w	;volatile
+   578  0796  3901               	andlw	1
+   579  0797  00FA               	movwf	??_avanceJ2+10
+   580  0798  0808               	movf	8,w	;volatile
+   581  0799  3901               	andlw	1
+   582  079A  047A               	iorwf	??_avanceJ2+10,w
+   583  079B  0479               	iorwf	??_avanceJ2+9,w
+   584  079C  0477               	iorwf	??_avanceJ2+7,w
+   585  079D  0475               	iorwf	??_avanceJ2+5,w
+   586  079E  0474               	iorwf	??_avanceJ2+4,w
+   587  079F  0472               	iorwf	??_avanceJ2+2,w
+   588  07A0  0470               	iorwf	??_avanceJ2,w
+   589  07A1  1D03               	btfss	3,2
+   590  07A2  2FA4               	goto	u21
+   591  07A3  2FA5               	goto	u20
+   592  07A4                     u21:
+   593  07A4  2FA7               	goto	l691
+   594  07A5                     u20:
+   595  07A5                     l689:
+   596                           
+   597                           ;JuegoDeCarreras.c: 129:         PORTDbits.RD0 = 1;
+   598  07A5  1408               	bsf	8,0	;volatile
+   599  07A6  2FAB               	goto	l57
+   600  07A7                     l691:
+   601                           
+   602                           ;JuegoDeCarreras.c: 131:         PORTD = PORTD << 1;
+   603  07A7  0808               	movf	8,w	;volatile
+   604  07A8  00F0               	movwf	??_avanceJ2
+   605  07A9  0770               	addwf	??_avanceJ2,w
+   606  07AA  0088               	movwf	8	;volatile
+   607  07AB                     l57:
+   608  07AB  0008               	return
+   609  07AC                     __end_of_avanceJ2:
+   610                           
+   611                           	psect	text3
+   612  0740                     __ptext3:	
+   613 ;; *************** function _avanceJ1 *****************
+   614 ;; Defined at:
+   615 ;;		line 120 in file "JuegoDeCarreras.c"
+   616 ;; Parameters:    Size  Location     Type
+   617 ;;		None
+   618 ;; Auto vars:     Size  Location     Type
+   619 ;;		None
+   620 ;; Return value:  Size  Location     Type
+   621 ;;                  1    wreg      void 
+   622 ;; Registers used:
+   623 ;;		wreg, status,2, status,0
+   624 ;; Tracked objects:
+   625 ;;		On entry : 0/0
+   626 ;;		On exit  : 0/0
+   627 ;;		Unchanged: 0/0
+   628 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   629 ;;      Params:         0       0       0       0       0
+   630 ;;      Locals:         0       0       0       0       0
+   631 ;;      Temps:         11       0       0       0       0
+   632 ;;      Totals:        11       0       0       0       0
+   633 ;;Total ram usage:       11 bytes
+   634 ;; Hardware stack levels used:    1
+   635 ;; This function calls:
+   636 ;;		Nothing
+   637 ;; This function is called by:
+   638 ;;		_main
+   639 ;; This function uses a non-reentrant model
+   640 ;;
+   641                           
+   642                           
+   643                           ;psect for function _avanceJ1
+   644  0740                     _avanceJ1:
+   645  0740                     l681:	
+   646                           ;incstack = 0
+   647                           ; Regs used in _avanceJ1: [wreg+status,2+status,0]
+   648                           
+   649                           
+   650                           ;JuegoDeCarreras.c: 121:     if ((PORTCbits.RC0 | PORTCbits.RC1 | PORTCbits.RC2 | PORTCb
+      +                          its.RC3 | PORTCbits.RC4 | PORTCbits.RC5 | PORTCbits.RC6 | PORTCbits.RC7) == 0)
+   651  0740  1283               	bcf	3,5	;RP0=0, select bank0
+   652  0741  1303               	bcf	3,6	;RP1=0, select bank0
+   653  0742  0D07               	rlf	7,w	;volatile
+   654  0743  0D07               	rlf	7,w	;volatile
+   655  0744  3901               	andlw	1
+   656  0745  00F0               	movwf	??_avanceJ1
+   657  0746  0E07               	swapf	7,w	;volatile
+   658  0747  00F1               	movwf	??_avanceJ1+1
+   659  0748  0CF1               	rrf	??_avanceJ1+1,f
+   660  0749  0C71               	rrf	??_avanceJ1+1,w
+   661  074A  3901               	andlw	1
+   662  074B  00F2               	movwf	??_avanceJ1+2
+   663  074C  0E07               	swapf	7,w	;volatile
+   664  074D  00F3               	movwf	??_avanceJ1+3
+   665  074E  0C73               	rrf	??_avanceJ1+3,w
+   666  074F  3901               	andlw	1
+   667  0750  00F4               	movwf	??_avanceJ1+4
+   668  0751  0E07               	swapf	7,w	;volatile
+   669  0752  3901               	andlw	1
+   670  0753  00F5               	movwf	??_avanceJ1+5
+   671  0754  0C07               	rrf	7,w	;volatile
+   672  0755  00F6               	movwf	??_avanceJ1+6
+   673  0756  0CF6               	rrf	??_avanceJ1+6,f
+   674  0757  0C76               	rrf	??_avanceJ1+6,w
+   675  0758  3901               	andlw	1
+   676  0759  00F7               	movwf	??_avanceJ1+7
+   677  075A  0C07               	rrf	7,w	;volatile
+   678  075B  00F8               	movwf	??_avanceJ1+8
+   679  075C  0C78               	rrf	??_avanceJ1+8,w
+   680  075D  3901               	andlw	1
+   681  075E  00F9               	movwf	??_avanceJ1+9
+   682  075F  0C07               	rrf	7,w	;volatile
+   683  0760  3901               	andlw	1
+   684  0761  00FA               	movwf	??_avanceJ1+10
+   685  0762  0807               	movf	7,w	;volatile
+   686  0763  3901               	andlw	1
+   687  0764  047A               	iorwf	??_avanceJ1+10,w
+   688  0765  0479               	iorwf	??_avanceJ1+9,w
+   689  0766  0477               	iorwf	??_avanceJ1+7,w
+   690  0767  0475               	iorwf	??_avanceJ1+5,w
+   691  0768  0474               	iorwf	??_avanceJ1+4,w
+   692  0769  0472               	iorwf	??_avanceJ1+2,w
+   693  076A  0470               	iorwf	??_avanceJ1,w
+   694  076B  1D03               	btfss	3,2
+   695  076C  2F6E               	goto	u11
+   696  076D  2F6F               	goto	u10
+   697  076E                     u11:
+   698  076E  2F71               	goto	l685
+   699  076F                     u10:
+   700  076F                     l683:
+   701                           
+   702                           ;JuegoDeCarreras.c: 122:         PORTCbits.RC0 = 1;
+   703  076F  1407               	bsf	7,0	;volatile
+   704  0770  2F75               	goto	l52
+   705  0771                     l685:
+   706                           
+   707                           ;JuegoDeCarreras.c: 124:         PORTC = PORTC << 1;
+   708  0771  0807               	movf	7,w	;volatile
+   709  0772  00F0               	movwf	??_avanceJ1
+   710  0773  0770               	addwf	??_avanceJ1,w
+   711  0774  0087               	movwf	7	;volatile
+   712  0775                     l52:
+   713  0775  0008               	return
+   714  0776                     __end_of_avanceJ1:
+   715                           
+   716                           	psect	text4
+   717  0719                     __ptext4:	
+   718 ;; *************** function _StartSecuence *****************
+   719 ;; Defined at:
+   720 ;;		line 109 in file "JuegoDeCarreras.c"
+   721 ;; Parameters:    Size  Location     Type
+   722 ;;		None
+   723 ;; Auto vars:     Size  Location     Type
+   724 ;;		None
+   725 ;; Return value:  Size  Location     Type
+   726 ;;                  1    wreg      void 
+   727 ;; Registers used:
+   728 ;;		wreg
+   729 ;; Tracked objects:
+   730 ;;		On entry : 0/0
+   731 ;;		On exit  : 0/0
+   732 ;;		Unchanged: 0/0
+   733 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   734 ;;      Params:         0       0       0       0       0
+   735 ;;      Locals:         0       0       0       0       0
+   736 ;;      Temps:          3       0       0       0       0
+   737 ;;      Totals:         3       0       0       0       0
+   738 ;;Total ram usage:        3 bytes
+   739 ;; Hardware stack levels used:    1
+   740 ;; This function calls:
+   741 ;;		Nothing
+   742 ;; This function is called by:
+   743 ;;		_main
+   744 ;; This function uses a non-reentrant model
+   745 ;;
+   746                           
+   747                           
+   748                           ;psect for function _StartSecuence
+   749  0719                     _StartSecuence:
+   750  0719                     l669:	
+   751                           ;incstack = 0
+   752                           ; Regs used in _StartSecuence: [wreg]
+   753                           
+   754                           
+   755                           ;JuegoDeCarreras.c: 110:     PORTAbits.RA2 = 1;
+   756  0719  1283               	bcf	3,5	;RP0=0, select bank0
+   757  071A  1303               	bcf	3,6	;RP1=0, select bank0
+   758  071B  1505               	bsf	5,2	;volatile
+   759                           
+   760                           ;JuegoDeCarreras.c: 111:     PORTAbits.RA0 = 0;
+   761  071C  1005               	bcf	5,0	;volatile
+   762  071D                     l671:
+   763                           
+   764                           ;JuegoDeCarreras.c: 112:     _delay((unsigned long)((600)*(8000000/4000.0)));
+   765  071D  3007               	movlw	7
+   766  071E  00F2               	movwf	??_StartSecuence+2
+   767  071F  3017               	movlw	23
+   768  0720  00F1               	movwf	??_StartSecuence+1
+   769  0721  306A               	movlw	106
+   770  0722  00F0               	movwf	??_StartSecuence
+   771  0723                     u87:
+   772  0723  0BF0               	decfsz	??_StartSecuence,f
+   773  0724  2F23               	goto	u87
+   774  0725  0BF1               	decfsz	??_StartSecuence+1,f
+   775  0726  2F23               	goto	u87
+   776  0727  0BF2               	decfsz	??_StartSecuence+2,f
+   777  0728  2F23               	goto	u87
+   778  0729  0000               	nop
+   779  072A                     l673:
+   780                           
+   781                           ;JuegoDeCarreras.c: 113:     PORTAbits.RA2 = 0;
+   782  072A  1283               	bcf	3,5	;RP0=0, select bank0
+   783  072B  1303               	bcf	3,6	;RP1=0, select bank0
+   784  072C  1105               	bcf	5,2	;volatile
+   785  072D                     l675:
+   786                           
+   787                           ;JuegoDeCarreras.c: 114:     PORTAbits.RA1 = 1;
+   788  072D  1485               	bsf	5,1	;volatile
+   789                           
+   790                           ;JuegoDeCarreras.c: 115:     _delay((unsigned long)((600)*(8000000/4000.0)));
+   791  072E  3007               	movlw	7
+   792  072F  00F2               	movwf	??_StartSecuence+2
+   793  0730  3017               	movlw	23
+   794  0731  00F1               	movwf	??_StartSecuence+1
+   795  0732  306A               	movlw	106
+   796  0733  00F0               	movwf	??_StartSecuence
+   797  0734                     u97:
+   798  0734  0BF0               	decfsz	??_StartSecuence,f
+   799  0735  2F34               	goto	u97
+   800  0736  0BF1               	decfsz	??_StartSecuence+1,f
+   801  0737  2F34               	goto	u97
+   802  0738  0BF2               	decfsz	??_StartSecuence+2,f
+   803  0739  2F34               	goto	u97
+   804  073A  0000               	nop
+   805  073B                     l677:
+   806                           
+   807                           ;JuegoDeCarreras.c: 116:     PORTAbits.RA1 = 0;
+   808  073B  1283               	bcf	3,5	;RP0=0, select bank0
+   809  073C  1303               	bcf	3,6	;RP1=0, select bank0
+   810  073D  1085               	bcf	5,1	;volatile
+   811  073E                     l679:
+   812                           
+   813                           ;JuegoDeCarreras.c: 117:     PORTAbits.RA0 = 1;
+   814  073E  1405               	bsf	5,0	;volatile
+   815  073F                     l47:
+   816  073F  0008               	return
+   817  0740                     __end_of_StartSecuence:
+   818  007E                     btemp	set	126	;btemp
+   819  007E                     wtemp0	set	126
+   820                           
+   821                           	psect	config
+   822                           
+   823                           ;Config register CONFIG1 @ 0x2007
+   824                           ;	Oscillator Selection bits
+   825                           ;	FOSC = XT, XT oscillator: Crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN
+   826                           ;	Watchdog Timer Enable bit
+   827                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
+   828                           ;	Power-up Timer Enable bit
+   829                           ;	PWRTE = OFF, PWRT disabled
+   830                           ;	RE3/MCLR pin function select bit
+   831                           ;	MCLRE = ON, RE3/MCLR pin function is MCLR
+   832                           ;	Code Protection bit
+   833                           ;	CP = OFF, Program memory code protection is disabled
+   834                           ;	Data Code Protection bit
+   835                           ;	CPD = OFF, Data memory code protection is disabled
+   836                           ;	Brown Out Reset Selection bits
+   837                           ;	BOREN = OFF, BOR disabled
+   838                           ;	Internal External Switchover bit
+   839                           ;	IESO = OFF, Internal/External Switchover mode is disabled
+   840                           ;	Fail-Safe Clock Monitor Enabled bit
+   841                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
+   842                           ;	Low Voltage Programming Enable bit
+   843                           ;	LVP = OFF, RB3 pin has digital I/O, HV on MCLR must be used for programming
+   844                           ;	In-Circuit Debugger Mode bit
+   845                           ;	DEBUG = 0x1, unprogrammed default
+   846  2007                     	org	8199
+   847  2007  20F1               	dw	8433
+   848                           
+   849                           ;Config register CONFIG2 @ 0x2008
+   850                           ;	Brown-out Reset Selection bit
+   851                           ;	BOR4V = BOR40V, Brown-out Reset set to 4.0V
+   852                           ;	Flash Program Memory Self Write Enable bits
+   853                           ;	WRT = OFF, Write protection off
+   854  2008                     	org	8200
+   855  2008  3FFF               	dw	16383
 
 Data Sizes:
     Strings     0
@@ -569,7 +880,7 @@ Data Sizes:
 
 Auto Spaces:
     Space          Size  Autos    Used
-    COMMON           14      3       3
+    COMMON           14     14      14
     BANK0            80      0       0
     BANK1            80      0       0
     BANK3            96      0       0
@@ -581,7 +892,8 @@ Pointer List with Targets:
 
 Critical Paths under _main in COMMON
 
-    _main->_StartSecuence
+    _main->_avanceJ1
+    _main->_avanceJ2
 
 Critical Paths under _main in BANK0
 
@@ -604,11 +916,20 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
- (0) _main                                                 0     0      0       0
+ (0) _main                                                 3     3      0       0
+                                             11 COMMON     3     3      0
                       _StartSecuence
+                           _avanceJ1
+                           _avanceJ2
                               _setup
  ---------------------------------------------------------------------------------
  (1) _setup                                                0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _avanceJ2                                            11    11      0       0
+                                              0 COMMON    11    11      0
+ ---------------------------------------------------------------------------------
+ (1) _avanceJ1                                            11    11      0       0
+                                              0 COMMON    11    11      0
  ---------------------------------------------------------------------------------
  (1) _StartSecuence                                        3     3      0       0
                                               0 COMMON     3     3      0
@@ -620,6 +941,8 @@ Call Graph Tables:
 
  _main (ROOT)
    _StartSecuence
+   _avanceJ1
+   _avanceJ2
    _setup
 
  Address spaces:
@@ -628,7 +951,7 @@ BITCOMMON            E      0       0       0        0.0%
 EEDATA             100      0       0       0        0.0%
 NULL                 0      0       0       0        0.0%
 CODE                 0      0       0       0        0.0%
-COMMON               E      3       3       1       21.4%
+COMMON               E      E       E       1      100.0%
 BITSFR0              0      0       0       1        0.0%
 SFR0                 0      0       0       1        0.0%
 BITSFR1              0      0       0       2        0.0%
@@ -651,26 +974,38 @@ DATA                 0      0       0      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Sun Jan 31 15:19:03 2021
+Symbol Table                                                                                   Mon Feb 01 00:24:24 2021
 
-                     l34 07D5                       l37 07FB                       u10 07B7  
-                     u11 07B6                       u27 07DF                       u37 07F0  
-                    l631 07C8                      l641 07CD                      l633 07C9  
-                    l651 07D9                      l643 07D2                      l635 07CA  
-                    l653 07E6                      l645 07D3                      l637 07CB  
-                    l629 07C0                      l661 07AC                      l655 07E9  
-                    l647 07D4                      l639 07CC                      l663 07B1  
-                    l657 07F7                      l649 07D6                      l665 07B7  
-                    l659 07FA                     _main 07AC                     btemp 007E  
+                     l52 0775                       l44 0718                       l47 073F  
+                     l57 07AB                       u10 076F                       u11 076E  
+                     u20 07A5                       u21 07A4                       u30 07B7  
+                     u31 07B6                       u40 07C8                       u41 07C7  
+                     u50 07E6                       u51 07E5                       u67 07D3  
+                     u77 07F1                       u87 0723                       u97 0734  
+                    l701 07C8                      l703 07CD                      l705 07DA  
+                    l651 070B                      l707 07E6                      l661 0710  
+                    l653 070C                      l709 07EB                      l671 071D  
+                    l663 0715                      l655 070D                      l673 072A  
+                    l681 0740                      l665 0716                      l657 070E  
+                    l649 0703                      l675 072D                      l683 076F  
+                    l691 07A7                      l667 0717                      l659 070F  
+                    l677 073B                      l669 0719                      l685 0771  
+                    l693 07AC                      l679 073E                      l687 0776  
+                    l695 07B1                      l689 07A5                      l697 07B7  
+                    l699 07BC                     _main 07AC                     btemp 007E  
                    start 0000                    ?_main 0070                    _ANSEL 0188  
         ??_StartSecuence 0070                    _PORTC 0007                    _PORTD 0008  
-                  _TRISC 0087                    _TRISD 0088                    _setup 07C0  
+                  _TRISC 0087                    _TRISD 0088                    _setup 0703  
                   status 0003                    wtemp0 007E          __initialization 07FC  
-           __end_of_main 07C0                   ??_main 0073                   ?_setup 0070  
-                 _ANSELH 0189  __end_of__initialization 07FC           __pcstackCOMMON 0070  
-          __end_of_setup 07D6                  ??_setup 0070               __pmaintext 07AC  
-                __ptext1 07C0                  __ptext2 07D6    __end_of_StartSecuence 07FC  
-   end_of_initialization 07FC                _PORTAbits 0005                _TRISAbits 0085  
-    start_initialization 07FC                ___latbits 0002           __size_of_setup 0016  
- __size_of_StartSecuence 0026            __size_of_main 0014            _StartSecuence 07D6  
-         ?_StartSecuence 0070  
+           __end_of_main 07FC                   ??_main 007B                   ?_setup 0070  
+                 _ANSELH 0189         __end_of_avanceJ1 0776         __end_of_avanceJ2 07AC  
+__end_of__initialization 07FC           __pcstackCOMMON 0070            __end_of_setup 0719  
+                ??_setup 0070               __pmaintext 07AC                ?_avanceJ1 0070  
+              ?_avanceJ2 0070                  __ptext1 0703                  __ptext2 0776  
+                __ptext3 0740                  __ptext4 0719    __end_of_StartSecuence 0740  
+             ??_avanceJ1 0070               ??_avanceJ2 0070     end_of_initialization 07FC  
+              _PORTAbits 0005                _PORTCbits 0007                _PORTDbits 0008  
+              _TRISAbits 0085      start_initialization 07FC                ___latbits 0002  
+      __size_of_avanceJ1 0036        __size_of_avanceJ2 0036           __size_of_setup 0016  
+ __size_of_StartSecuence 0027                 _avanceJ1 0740                 _avanceJ2 0776  
+          __size_of_main 0050            _StartSecuence 0719           ?_StartSecuence 0070  

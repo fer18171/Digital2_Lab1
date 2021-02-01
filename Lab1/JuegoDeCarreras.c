@@ -34,11 +34,17 @@
 #define LedR PORTAbits.RA2
 #define LedV PORTAbits.RA0
 #define LedA PORTAbits.RA1
+#define J1 PORTAbits.RA4
+#define J2 PORTAbits.RA5
+#define start PORTAbits.RA3
+
 //******************************************************************************
 //Prototipos de Funciones
 //******************************************************************************
 void setup(void);
 void StartSecuence(void);
+void avanceJ1(void);
+void avanceJ2(void);
 //******************************************************************************
 //Loop Principal
 //******************************************************************************
@@ -58,11 +64,20 @@ void StartSecuence(void);
  */
 void main(void) {
     setup();
-
     while (1) {
-        if (PORTAbits.RA3==1){
+        if (PORTAbits.RA3 == 1) {
             StartSecuence();
         }
+        if (LedV == 1 & J1 == 1) {
+            avanceJ1();
+            __delay_ms(500);
+
+        }
+        if (LedV == 1 & J2 == 1) {
+            avanceJ2();
+            __delay_ms(500);
+        }
+
     }
 }
 
@@ -87,16 +102,32 @@ void setup(void) {
     LedR = 0;
     LedV = 0;
     LedA = 0;
-    
+
 }
 
 /*Secuencia del Semaforo*/
-void StartSecuence(void){
+void StartSecuence(void) {
+    PORTa
     LedR = 1;
+    LedV = 0;
     __delay_ms(600);
     LedR = 0;
     LedA = 1;
     __delay_ms(600);
     LedA = 0;
     LedV = 1;
+}
+
+void avanceJ1(void) {
+    if ((PORTCbits.RC0 | PORTCbits.RC1 | PORTCbits.RC2 | PORTCbits.RC3 | PORTCbits.RC4 | PORTCbits.RC5 | PORTCbits.RC6 | PORTCbits.RC7) == 0)
+        PORTCbits.RC0 = 1;
+    else
+        PORTC = PORTC << 1;
+}
+
+void avanceJ2(void) {
+    if ((PORTDbits.RD0 | PORTDbits.RD1 | PORTDbits.RD2 | PORTDbits.RD3 | PORTDbits.RD4 | PORTDbits.RD5 | PORTDbits.RD6 | PORTDbits.RD7) == 0)
+        PORTDbits.RD0 = 1;
+    else
+        PORTD = PORTD << 1;
 }
