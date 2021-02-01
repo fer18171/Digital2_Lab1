@@ -2515,12 +2515,12 @@ extern __bank0 __bit __timeout;
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 44 "JuegoDeCarreras.c"
+# 45 "JuegoDeCarreras.c"
 void setup(void);
 void StartSecuence(void);
 void avanceJ1(void);
 void avanceJ2(void);
-# 65 "JuegoDeCarreras.c"
+# 68 "JuegoDeCarreras.c"
 void main(void) {
     setup();
     while (1) {
@@ -2535,6 +2535,20 @@ void main(void) {
         if (PORTAbits.RA0 == 1 & PORTAbits.RA5 == 1) {
             avanceJ2();
             _delay((unsigned long)((500)*(8000000/4000.0)));
+        }
+        if (PORTCbits.RC7==1){
+            _delay((unsigned long)((300)*(8000000/4000.0)));
+            PORTCbits.RC7=0;
+            PORTD = 0;
+            RE0 = 1;
+            PORTAbits.RA0 = 0;
+        }
+        if (PORTDbits.RD7==1){
+            _delay((unsigned long)((300)*(8000000/4000.0)));
+            PORTDbits.RD7=0;
+            PORTC = 0;
+            RE1 = 1;
+            PORTAbits.RA0 = 0;
         }
 
     }
@@ -2556,6 +2570,10 @@ void setup(void) {
     TRISAbits.TRISA3 = 1;
     TRISAbits.TRISA4 = 1;
     TRISAbits.TRISA5 = 1;
+    TRISEbits.TRISE0= 0;
+    TRISEbits.TRISE1= 0;
+    RE0 = 0;
+    RE1 = 0;
     PORTD = 0;
     PORTC = 0;
     PORTAbits.RA2 = 0;
@@ -2566,6 +2584,10 @@ void setup(void) {
 
 
 void StartSecuence(void) {
+    PORTD = 0;
+    PORTC = 0;
+    RE0 = 0;
+    RE1 = 0;
     PORTAbits.RA2 = 1;
     PORTAbits.RA0 = 0;
     _delay((unsigned long)((600)*(8000000/4000.0)));
